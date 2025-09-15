@@ -80,7 +80,7 @@ function Features() {
 
 function Callout() {
     return (
-        <section className="mt-16 text-center">
+        <section className="my-16 text-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12">
                     <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">コスト効率を最重視</h3>
