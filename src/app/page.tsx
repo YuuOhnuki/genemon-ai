@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { signIn } from '@/auth';
 
 export default function Home() {
     return (
@@ -17,16 +16,7 @@ export default function Home() {
                     <li className="tracking-[-.01em]">Save and see your changes instantly.</li>
                 </ol>
 
-                <div className="flex gap-4 items-center flex-col sm:flex-row">
-                    <form
-                        action={async () => {
-                            'use server';
-                            await signIn('google');
-                        }}
-                    >
-                        <button type="submit">Signin with Google</button>
-                    </form>
-                </div>
+                <div className="flex gap-4 items-center flex-col sm:flex-row"></div>
             </main>
             <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
                 <a
