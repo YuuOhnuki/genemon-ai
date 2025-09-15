@@ -1,14 +1,16 @@
 'use client';
 
-import Link from 'next/link';
 import { Upload, Scan, MessageSquare, BarChart3, Shield, Zap } from 'lucide-react';
 import Hero from '@/components/features/landing/Hero';
+import Footer from '@/components/features/landing/Footer';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
     return (
         <div className="min-h-screen flex flex-col">
             <Hero />
             <Features />
+            <Separator />
             <Callout />
             <Footer />
         </div>
@@ -105,23 +107,5 @@ function Callout() {
                 </div>
             </div>
         </section>
-    );
-}
-
-function Footer() {
-    return (
-        <footer className="py-10 border-t bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-                <p className="text-sm text-gray-500">© {new Date().getFullYear()} Genemon AI</p>
-                <div className="flex gap-4 text-sm text-gray-600">
-                    <Link href="/terms" className="hover:underline">
-                        利用規約
-                    </Link>
-                    <Link href="/privacy" className="hover:underline">
-                        プライバシー
-                    </Link>
-                </div>
-            </div>
-        </footer>
     );
 }

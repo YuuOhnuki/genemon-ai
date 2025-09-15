@@ -14,7 +14,7 @@ export default function LoginDialog() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="">
                 <DialogHeader>
                     <DialogTitle>
                         <h1 className="text-2xl font-bold mb-6 text-center">ログイン</h1>
