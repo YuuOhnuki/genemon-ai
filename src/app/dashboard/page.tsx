@@ -10,5 +10,5 @@ export default async function Dashboard() {
         redirect('/login');
     }
 
-    return <p>Hello {data.user.email}</p>;
+    redirect('/dashboard/home');
 }
