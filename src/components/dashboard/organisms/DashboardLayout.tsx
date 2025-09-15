@@ -7,11 +7,12 @@ import { Sidebar } from '../molecules/Sidebar';
 import { DashboardHome } from './DashboardHome';
 import { TestsPage } from './TestsPage';
 import { CreateTestPage } from './CreateTestPage';
+import { useUser } from '@/components/providers/UserProvider';
 
 export default function DashboardLayout() {
     const [activeTab, setActiveTab] = useState('home');
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [user] = useState<{ name: string; avatar: string | null }>({ name: '山田太郎', avatar: null });
+    const user = useUser();
 
     const renderContent = () => {
         switch (activeTab) {
@@ -41,8 +42,19 @@ export default function DashboardLayout() {
     };
 
     return (
-        <div className="min-h-screen w-full bg-gray-50">
-            <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} user={user} />
+        <div className="min-h-screen bg-gray-50">
+            <Header
+                onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
+                user={
+                    user
+                        ? {
+                              name: user.name ?? undefined,
+                              avatar: user.avatar ?? undefined,
+                              email: user.email ?? null,
+                          }
+                        : undefined
+                }
+            />
             <div className="flex">
                 <Sidebar
                     activeTab={activeTab}
